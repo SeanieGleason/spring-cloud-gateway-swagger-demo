@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="SpringCloudGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="spring-cloud-gateway.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.gleason.springcloudgateway.SpringCloudGatewayApplication" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <envs>
+      <env name="SERVER_PORT" value="8888" />
+    </envs>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

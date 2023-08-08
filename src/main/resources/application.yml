@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: english_route
+          uri: ${ENGLISH_ROUTE:http://localhost:8080}
+          predicates:
+            - Path=/EN/**
+          filters:
+            - RewritePath=/EN/(?<segment>.*),/$\{segment}
+        - id: german_route
+          uri: ${GERMAN_ROUTE:http://localhost:8081}
+          predicates:
+            - Path=/GE/**
+          filters:
+            - RewritePath=/GE/(?<segment>.*),/$\{segment}
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    config-url: /v3/api-docs/swagger-config
+    urls:
+      - url: /EN/v3/api-docs
+        name: English Greetings Service
+      - url: /GE/v3/api-docs
+        name: German Greetings Service
